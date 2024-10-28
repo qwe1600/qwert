@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="eh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100px;
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Калькулятор</h2>
+        <input type="number" id="num1" placeholder="Число 1">
+        <input type="number" id="num2" placeholder="Число 2"><br>
+        <button onclick="sdd()">+</button>
+        <button onclick="subtract()">-</button>
+        <button onclick="multiplay()">×</button>
+        <button onclick="divide()">:</button>
+        <h3>Результат: <span id="result"></span></h3>
+    </div>
+
+    <script>
+        function add() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const result = num1 + num2;
+            document.getElementById('result').textContent = result;
+        }
+
+        function snbtract() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const result = num1 - num2;
+            document.getElementById('result').textContent = result;
+        }
+
+        function multiplay() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const result = num1 * num2;
+            document.getElementById('result').textContent = result;
+        }
+
+        function divide() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            if (num2 === 0) {
+                alert("На ноль делить нельза!");
+            } else {
+                const result = num1 / num2;
+                document.getElementById('result').textContent = result;
+            }   
+        } 
+    </script>
+</body>
+</html>
